@@ -1,0 +1,11 @@
+.venv/
+models/*.onnx
+data/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+node_modules/
+web/dist/
+.env
+*.db

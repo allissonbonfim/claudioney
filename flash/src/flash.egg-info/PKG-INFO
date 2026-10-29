@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: flash
+Version: 0.1.0
+Summary: FLASH! — busca de fotos de eventos por selfie
+Requires-Python: >=3.12
+Requires-Dist: fastapi
+Requires-Dist: uvicorn[standard]
+Requires-Dist: sqlalchemy>=2
+Requires-Dist: pydantic-settings
+Requires-Dist: python-multipart
+Requires-Dist: opencv-python-headless
+Requires-Dist: numpy
+Requires-Dist: pillow
+Requires-Dist: httpx
+Requires-Dist: pyjwt
+Requires-Dist: google-api-python-client
+Requires-Dist: google-auth
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Provides-Extra: postgres
+Requires-Dist: psycopg[binary]; extra == "postgres"

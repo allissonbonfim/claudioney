@@ -1,0 +1,46 @@
+[project]
+name = "flash"
+version = "0.1.0"
+description = "FLASH! — busca de fotos de eventos por selfie"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi",
+  "uvicorn[standard]",
+  "sqlalchemy>=2",
+  "pydantic-settings",
+  "python-multipart",
+  "opencv-python-headless",
+  "numpy",
+  "pillow",
+  "httpx",
+  "pyjwt",
+  "google-api-python-client",
+  "google-auth",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff"]
+postgres = ["psycopg[binary]"]
+
+[project.scripts]
+flash = "flash.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008", "E501"]  # B008: padrão Depends() do FastAPI; E501: o formatador cuida

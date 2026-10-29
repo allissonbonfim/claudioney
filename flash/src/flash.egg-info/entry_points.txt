@@ -1,0 +1,2 @@
+[console_scripts]
+flash = flash.cli:main
